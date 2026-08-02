@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 10px;
+    background: #1e3101b5;
+    color: #1a0b0b;
+}
+button{
+    background: #4c6d1ab5;
+    border-color: #4c6d1ab5;
+    border-radius: 9px;
+    padding: 3px;
+}
+input{
+    background: #4c6d1ab5;
+    border-color: #4c6d1ab5;
+    border-radius: 9px;
+    padding: 3px;
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    font-size: xx-large;
+}

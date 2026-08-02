@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<title type="text/javascript">
+		XYZ Bank
+	</title>
+	<link rel="stylesheet" href="style.css">
+	<script>
+		function autoRun(){
+			document.querySelector(".codeButton").disabled = true;
+		}
+		let welcome_message_shown = false;
+		function welcome_message() {
+			if(welcome_message_shown){
+				return
+			}
+			alert("Hello Dear! Hope you are doing Great")
+			welcome_message_shown = true
+		}
+		function hide_process() {
+			document.getElementById("hide").style.display = "none"
+		}
+		function show_process() {
+			document.getElementById("hide").style.display = "inline"
+		}
+		function validateID() {
+			const s = document.getElementById("customerId").value
+			if (s == "") {
+				document.querySelector(".div1").innerHTML = "Please enter customer Id."
+				return
+			}
+			let correctId = s.includes("XYZ")
+			if (!correctId) {
+				document.querySelector(".div1").innerHTML = "Enter a Valid ID."
+			} else {
+				document.querySelector(".div1").innerHTML = "Enter ID is Correct."
+				document.querySelector(".codeButton").disabled = false
+			}
+		}
+		function emptyDiv1() {
+			document.querySelector(".div1").innerHTML = ""
+		}
+		function generateCouponCode() {
+			const s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+			let code = ""
+			for (let i = 0; i < 9; i++) {
+				code += s[Math.floor(Math.random() * 26)];
+			}
+			document.querySelector(".div2").innerHTML = "Diwali Code:-  " + code;
+			document.querySelector(".codeButton").disabled = true;
+		}
+		function pleaseValidate(){
+			if(document.querySelector(".codeButton").disabled){
+
+			}
+		}
+	</script>
+</head>
+
+<body onload="autoRun()">	
+	<span class="heading" onmouseenter="welcome_message()">
+		Welcome Friend !!
+	</span>
+	<br><br>
+	<p id="hide" style="display: inline;">
+        Steps to get Diwali Voucher:-<br>
+        1. Enter a valid Customer ID<br>
+        2. Verify your details <br>
+        3. Once verified, Generate Coupon Code and Enjoy the benifts.<br>
+    </p>
+	<br>
+	<button onClick="hide_process()">
+		Hide Processes
+	</button>
+	<button onClick="show_process()">
+		Show Processes
+	</button>
+	<br><br>
+
+	<div>
+		<label for="customerId">Customer id: </label>
+		<input onClick="emptyDiv1()" type="text" id="customerId" name="customerId" placeholder="Enter Your Customer ID: "></input>
+		<br><br>
+		<div class="div1"></div>
+		<br>
+		<button onClick="validateID()">Validate Id</button>
+		<br><br>
+		<button class="codeButton" onmou="pleaseValidate()" onClick="generateCouponCode()">Generate Coupon Code</button>
+		<br>
+		<br>
+		<div class=" div2"></div>
+	</div>
+</body>
+
+
+
+</html>
